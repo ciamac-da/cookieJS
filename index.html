@@ -6,8 +6,7 @@
     <title>Cias Cookies!</title>
     <style></style>
   </head>
-  <body>
-    <button onclick="checkCookie()">Set Cookie</button>
+
     <script>
         // I make a function
         // I define 3 parameter which are cookie's name,value,deadline
@@ -28,7 +27,7 @@
         // I use split to delete ; between names
         var ca = decodedCookie.split(";");
         for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
+            var c = ca[i];
           while (c.charAt(0) == " ") {
             c = c.substring(1);
           }
@@ -42,7 +41,7 @@
       function checkCookie() {
         var user = getCookie("username");
         if (user != "") {
-            // If user was found then say welcome to him/her
+                    // If user was found then say welcome to him/her
           alert("Welcome again " + user);
         } else {
             // Otherwise enter your name again in prompt
@@ -53,5 +52,7 @@
         }
       }
     </script>
-  </body>
+      <body onload="checkCookie()">
+        <button onclick="checkCookie()">Set Cookie</button>
+    </body>
 </html>
